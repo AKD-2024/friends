@@ -1,5 +1,6 @@
 <% content_for :title, "Friends" %>
 
+<% if user_signed_in? %>
 <h1>Friends List</h1>
 <br>
 
@@ -7,12 +8,10 @@
   <table class="table table-striped table-bordered table-hover">
     <thead class="table-dark">
       <tr>
-        <th scope="col">First Name</th>
-        <th scope="col">Last Name</th>
+        <th scope="col">Name</th>
         <th scope="col">Email</th>
         <th scope="col">Phone</th>
         <th scope="col">Twitter</th>
-        <th scope="col">User Id</th>
         <th colspan="1"></th>
       </tr>
     </thead>
@@ -22,3 +21,16 @@
     </tbody>
   </table>
 </div>
+<% else %>
+<div class="card">
+  <div class="card-header">
+  Please Sign Up or login to continue
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Hello User</h5>
+    <p class="card-text">Use Friend App to keep track of your friends and the information related to them</p>
+    <%= link_to "Log  In", new_user_session_path, class: "btn btn-success" %>
+    <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary" %>
+  </div>
+</div>
+<% end %>
