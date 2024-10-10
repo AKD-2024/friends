@@ -1,1 +1,13 @@
-<h1>About Us....</h1>
+<div class="card">
+  <div class="card-header">
+    <h3> About Us </h3>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Developed By - Anjali Dubey</h5>
+    <br/><br/>
+    <p class="card-text"><%= @about_app %></p>
+    <p>Enjoy using it.... </p>
+    <br/><br/>
+    <%= link_to "Log In", new_user_session_path, class: "btn btn-primary" %>
+  </div>
+</div>
